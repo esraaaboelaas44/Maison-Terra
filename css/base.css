@@ -1,0 +1,37 @@
+html{
+    scroll-padding-top:env(safe-area-inset-top,0px);
+    scroll-behavior:smooth
+}
+body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:Inter,system-ui,sans-serif;
+    font-weight:300;
+    overflow-x:hidden
+}
+body::before{
+    content:"";
+    position:fixed;
+    inset:0 0 auto;
+    height:env(safe-area-inset-top,0px);
+    background:var(--bg);
+    z-index:60
+}
+h1,h2,h3,.serif{
+    font-family:'Cormorant Garamond',Georgia,serif;
+    font-weight:500;
+    letter-spacing:.01em
+}
+.bg-surf{
+    background:var(--surf)
+}
+.text-mute{
+    color:var(--mute)
+}
+.text-acc{
+    color:var(--acc)
+}
+.bd{
+    border-color:var(--line)
+}

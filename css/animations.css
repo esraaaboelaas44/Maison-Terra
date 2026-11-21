@@ -1,0 +1,46 @@
+.view{
+    display:none
+}
+.view.show{
+    display:block;
+    animation:pg .6s cubic-bezier(.2,.7,.2,1)
+}
+@keyframes pg{
+    from{opacity:0;transform:translateY(14px)}
+    to{opacity:1;transform:none}
+}
+.rv{
+    opacity:0;
+    transform:translateY(28px);
+    transition:opacity .8s,transform .8s cubic-bezier(.2,.7,.2,1)
+}
+.rv.in{
+    opacity:1;transform:none
+}
+.hero .blob{
+    position:absolute;
+    border-radius:50%;
+    filter:blur(2px);
+    animation:fl 9s ease-in-out infinite
+}
+@keyframes fl{
+    50%{transform:translateY(-24px) scale(1.04)}
+}
+.bump{
+    animation:bp .4s
+}
+@keyframes bp{
+    40%{transform:scale(1.5)}
+}
+@media(prefers-reduced-motion:reduce){
+    *{animation:none!important;
+        transition:none!important
+    }
+    .rv{
+        opacity:1;
+        transform:none
+    }
+}
+body,header,.bg-surf,footer,#drawer{
+    transition:background-color .5s,color .5s,border-color .5s
+}

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Maison Terra</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<link rel="stylesheet" href="css/variables.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+<a href="#main" class="sr-only">Skip to main content</a>
+<header>
+ <div class="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
+  <a href="#home" class="serif text-2xl tracking-[.2em]">MAISON TERRA</a>
+  <nav class="hidden md:flex gap-9" id="nav"><a class="nl" href="#shop">Shop</a><a class="nl" href="#about">About</a><a class="nl" href="#help">Help</a><a class="nl" href="#contact">Contact</a></nav>
+  <div class="flex items-center gap-4">
+   <button id="themeBtn" aria-label="Toggle light and dark mode"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.3" viewBox="0 0 24 24"><path id="themeIcon" d="M12 3a9 9 0 109 9 7 7 0 01-9-9z"/></svg></button>
+   <button id="cartBtn" aria-label="Open cart" class="flex items-center gap-1.5 text-sm"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.3" viewBox="0 0 24 24"><path d="M5 8h14l-1 12H6zM9 8V6a3 3 0 016 0v2"/></svg><span id="cnt">0</span></button>
+   <button id="burger" class="md:hidden" aria-label="Menu"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.3" viewBox="0 0 24 24"><path d="M3 7h18M3 12h18M3 17h18"/></svg></button>
+  </div>
+ </div>
+ <div id="mnav" class="md:hidden overflow-hidden transition-all duration-500 max-h-0"><div class="px-5 pb-5 flex flex-col gap-4"><a class="nl self-start" href="#shop">Shop</a><a class="nl self-start" href="#about">About</a><a class="nl self-start" href="#help">Help</a><a class="nl self-start" href="#contact">Contact</a></div></div>
+</header>
+
+<main id="main">
+<!-- HOME -->
+<section class="view" id="v-home">
+ <div class="hero">
+  <div class="absolute inset-0" data-img="hero/hero" data-alt="Curated home goods in warm minimalist interior" data-ph="linear-gradient(135deg,#e6d3bd,#c98f6d 55%,#8a5a3f)"></div>
+  <div class="absolute inset-0" style="background:rgba(30,20,12,.28)"></div>
+  <div class="blob" style="width:420px;height:420px;right:-90px;top:-70px;background:#f3e3cf55"></div>
+  <div class="blob" style="width:240px;height:240px;right:18%;bottom:-60px;background:#8a5a3f66;animation-delay:-3s"></div>
+  <div class="max-w-6xl mx-auto px-5 w-full relative" style="color:#fff">
+   <h1 class="rv text-5xl md:text-7xl leading-tight max-w-2xl" style="color:#fff">Objects for Intentional Living</h1>
+   <p class="rv text-lg mt-6 max-w-md" style="color:#fbefe0;transition-delay:.15s">Handcrafted ceramics, natural textiles, and timeless lighting — curated for spaces that breathe.</p>
+   <a href="#shop" class="rv btn mt-9" style="background:#fff;color:#2b2622;transition-delay:.3s">Shop the Collection</a>
+  </div>
+ </div>
+ <div class="border-b bd bg-surf"><div class="max-w-6xl mx-auto px-5 py-6 grid grid-cols-2 md:grid-cols-4 gap-4 text-center text-xs tracking-[.14em] uppercase text-mute"><span>Free shipping over $150</span><span>30-day easy returns</span><span>Sustainably sourced materials</span><span>Handcrafted in small batches</span></div></div>
+ <div class="max-w-6xl mx-auto px-5 py-20">
+  <h2 class="rv text-4xl text-center mb-12">Shop by Category</h2>
+  <div class="grid grid-cols-2 md:grid-cols-5 gap-4" id="cats"></div>
+ </div>
+ <div class="bg-surf py-20"><div class="max-w-6xl mx-auto px-5">
+  <h2 class="rv text-4xl text-center">Our Favorites</h2>
+  <p class="rv text-mute text-center mt-3 mb-10">Pieces our team reaches for again and again. Drag to browse.</p>
+  <div class="scroller" id="favs"></div>
+ </div></div>
+ <div class="max-w-6xl mx-auto px-5 py-20">
+  <h2 class="rv text-4xl text-center">New Arrivals</h2>
+  <p class="rv text-mute text-center mt-3 mb-12">A selection of our most-loved objects, each chosen for its craft, material, and quiet beauty.</p>
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-6" id="newp"></div>
+  <div class="text-center mt-12 rv"><a href="#shop" class="btn btn-o">View All Products</a></div>
+ </div>
+ <div class="bg-surf"><div class="max-w-6xl mx-auto px-5 py-20 grid md:grid-cols-2 gap-12 items-center">
+  <div class="rv img" style="aspect-ratio:1/1; width:100%; height: 100%;" data-img="home/craft" data-alt="Artisan crafting ceramics" data-ph="linear-gradient(160deg,#d9a883,#8a5a3f)"></div>
+  <div class="rv"><p class="text-acc text-xs tracking-[.2em] uppercase mb-3">Our Craft</p><h2 class="mb-6 made-with-intention">Made <p class="with">with</p><p class="intention">Intention</p></h2>
+   <p class="text-mute leading-relaxed mb-4">Every piece in our collection is chosen for its story — the hands that shaped it, the materials that compose it, the way it catches light or holds warmth.</p>
+   <p class="text-mute leading-relaxed mb-8">We work directly with independent makers who share our belief that everyday objects should be beautiful, functional, and built to last.</p><a href="#about" class="btn">Learn More</a></div>
+ </div></div>
+</section>
+
+<!-- SHOP -->
+<section class="view" id="v-shop">
+ <div class="max-w-6xl mx-auto px-5 py-16">
+  <h1 class="text-5xl md:text-6xl text-center">Shop All</h1>
+  <p class="text-mute text-center mt-4 max-w-xl mx-auto">Explore our complete collection of handcrafted home goods, each piece selected for its quality, design, and story.</p>
+  <div class="flex flex-wrap items-center justify-between gap-4 mt-12 mb-8 border-y bd py-4">
+   <div class="flex flex-wrap gap-2" id="chips"></div><span class="text-sm text-mute" id="pc">12 products</span>
+  </div>
+  <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="grid"></div>
+ </div>
+</section>
+
+<!-- ABOUT -->
+<section class="view" id="v-about">
+ <div class="max-w-3xl mx-auto px-5 pt-16 text-center"><p class="text-acc text-xs tracking-[.2em] uppercase mb-3">Our Story</p><h1 class="text-5xl md:text-6xl mb-6">Our <span class="story">Story</span></h1>
+  <p class="text-mute text-lg">Maison Terra began with a simple belief: the objects we live with should be made with care, built to last, and chosen with intention.</p></div>
+ <div class="max-w-5xl mx-auto px-5 py-12"><div class="rv img" style="aspect-ratio:16/8" data-img="about/about-hero" data-alt="Artisan at work" data-ph="linear-gradient(120deg,#e6d3bd,#c98f6d 60%,#8a5a3f)"></div></div>
+ <div class="max-w-3xl mx-auto px-5 pb-16 text-mute leading-relaxed space-y-5">
+  <h2 class="text-4xl text-[color:var(--ink)] rv">What We Believe</h2>
+  <p class="rv">We started Maison Terra because we were tired of disposable home goods — objects made quickly, sold cheaply, and discarded after a season. We wanted to create something different: a place where every piece tells a story, where quality matters more than trends, and where the people who make things are valued as much as the things themselves.</p>
+  <p class="rv">Every product in our collection is chosen for its craft, its materials, and its maker. We work directly with independent artisans and small studios — people who care about what they create and take pride in their work. We visit their workshops, learn their processes, and build real relationships.</p>
+  <p class="rv">We believe that living well doesn’t require excess. It requires choosing fewer things, but choosing them well. A hand-thrown ceramic vase that catches the morning light. A linen throw that softens with each wash. A brass lamp that will outlast trends. These are the objects that make a house a home.</p>
+ </div>
+ <div class="bg-surf py-20"><div class="max-w-6xl mx-auto px-5"><h2 class="text-4xl text-center mb-12 rv">Our Values</h2>
+  <div class="grid md:grid-cols-3 gap-6">
+   <div class="rv bg-[color:var(--bg)] p-10 text-center hover:-translate-y-2 transition duration-500"><h3 class="text-3xl text-acc mb-3">Craft</h3><p class="text-mute">Every piece is made by hand or in small batches, with attention to detail and respect for traditional techniques.</p></div>
+   <div class="rv bg-[color:var(--bg)] p-10 text-center hover:-translate-y-2 transition duration-500" style="transition-delay:.1s"><h3 class="text-3xl text-acc mb-3">Quality</h3><p class="text-mute">We choose materials that age well and construction that lasts. Our objects are built to be used, not just displayed.</p></div>
+   <div class="rv bg-[color:var(--bg)] p-10 text-center hover:-translate-y-2 transition duration-500" style="transition-delay:.2s"><h3 class="text-3xl text-acc mb-3">Intention</h3><p class="text-mute">We curate rather than collect. Every piece earns its place in our collection through beauty, function, and story.</p></div>
+  </div></div></div>
+ <div class="text-center py-20 px-5 rv"><h2 class="text-4xl mb-3">Explore the Collection</h2><p class="text-mute mb-8">Discover objects crafted with intention, chosen for a lifetime of use.</p><a href="#shop" class="btn">Shop Now</a></div>
+</section>
+
+<!-- HELP -->
+<section class="view" id="v-help">
+ <div class="max-w-3xl mx-auto px-5 py-16">
+  <h1 class="text-5xl md:text-6xl text-center">How Can We Help?</h1>
+  <p class="text-mute text-center mt-4 mb-14">Find answers to common questions about orders, shipping, returns, and more.</p>
+  <h2 class="text-3xl mb-6">Frequently Asked Questions</h2>
+  <div id="faqs" class="border-t bd"></div>
+  <div class="text-center mt-20 rv"><h2 class="text-3xl mb-3">Still Have Questions?</h2><p class="text-mute mb-7">Our customer support team is here to help. Reach out and we’ll get back to you within 24 hours.</p><a href="#contact" class="btn">Contact Us</a></div>
+ </div>
+</section>
+
+<!-- CONTACT -->
+<section class="view" id="v-contact">
+ <div class="max-w-xl mx-auto px-5 py-16">
+  <h1 class="text-5xl md:text-6xl text-center">Get in Touch</h1>
+  <p class="text-mute text-center mt-4 mb-12">Questions about a piece, an order, or our makers? We’d love to hear from you.</p>
+  <div id="formWrap"><div class="space-y-8">
+   <label class="block text-xs tracking-[.14em] uppercase text-mute">Name *<input id="fn" autocomplete="name"></label>
+   <label class="block text-xs tracking-[.14em] uppercase text-mute">Email *<input id="fe" type="email" autocomplete="email"></label>
+   <label class="block text-xs tracking-[.14em] uppercase text-mute">Message *<textarea id="fm" rows="4"></textarea></label>
+   <p id="ferr" class="text-sm text-acc h-4"></p>
+   <button class="btn w-full" id="send">Send Message</button></div>
+   <p class="text-center text-mute text-sm mt-8">Prefer email? Write to us at <a class="underline" href="mailto:hello@maisonterra.com">hello@maisonterra.com</a></p></div>
+ </div>
+</section>
+</main>
+
+<footer class="bg-surf border-t bd"><div class="max-w-6xl mx-auto px-5 py-16 grid grid-cols-2 md:grid-cols-4 gap-10 text-sm">
+ <div class="col-span-2 md:col-span-1"><h3 class="serif text-2xl tracking-[.2em] mb-3">MAISON TERRA</h3><p class="text-mute">Curated home goods and lifestyle objects, crafted with intention.</p></div>
+ <div><h4 class="text-xs tracking-[.16em] uppercase mb-4">Shop</h4><ul class="space-y-2 text-mute" id="fcat"><li><a class="hover:text-[color:var(--acc)]" href="#shop">All Products</a></li></ul></div>
+ <div><h4 class="text-xs tracking-[.16em] uppercase mb-4">Help</h4><ul class="space-y-2 text-mute"><li><a href="#help">FAQ</a></li><li><a href="#help">Shipping</a></li><li><a href="#help">Returns</a></li><li><a href="#contact">Contact</a></li><li><a href="#about">About Us</a></li></ul></div>
+ <div><h4 class="text-xs tracking-[.16em] uppercase mb-4">Legal</h4><ul class="space-y-2 text-mute"><li>Privacy Policy</li><li>Terms of Service</li></ul></div>
+ </div><p class="text-center text-xs text-mute pb-8">© 2026 Maison Terra. All rights reserved.</p>
+</footer>
+
+<div id="veil"></div>
+<aside id="drawer" aria-label="Cart"><div class="flex justify-between items-center mb-6"><h2 class="text-3xl">Your Cart</h2><button id="cx" class="text-2xl" aria-label="Close">×</button></div>
+ <div id="items" class="flex-1 overflow-y-auto"></div>
+ <div class="border-t bd pt-4"><div class="flex justify-between mb-1"><span>Subtotal</span><strong id="sub">$0</strong></div><p class="text-xs text-mute mb-4" id="ship"></p><button class="btn w-full" id="co">Checkout</button></div></aside>
+<div id="toast"></div>
+
+<script src="js/config.js"></script>
+<script src="js/data.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/images.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/render.js"></script>
+<script src="js/router.js"></script>
+<script src="js/theme.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

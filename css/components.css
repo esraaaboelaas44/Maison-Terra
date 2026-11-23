@@ -161,6 +161,7 @@ input,textarea{
 input:focus,textarea:focus{
     border-color:var(--acc)
 }
+
 #drawer{
     position:fixed;
     top:0;
@@ -174,10 +175,11 @@ input:focus,textarea:focus{
     padding:calc(1.5rem + env(safe-area-inset-top,0px)) 1.5rem 1.5rem;
     display:flex;
     flex-direction:column;
-    box-shadow:-20px 0 50px rgba(0,0,0,.18)
+    box-shadow: none; 
 }
 #drawer.open{
-    transform:none
+    transform:none;
+    box-shadow: -20px 0 50px rgba(0,0,0,.18);
 }
 #veil{
     position:fixed;

@@ -1,6 +1,6 @@
 const CONFIG = {
   imgDir: "images/",     
-  imgExt: ".jpg",      
+  imgExt: ".webp",      
   currency: "$",
   freeShipping: 150
 };

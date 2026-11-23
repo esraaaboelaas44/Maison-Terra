@@ -58,6 +58,8 @@ header{
     width:100%;
     height:100%;
     display:block;
+    object-fit: cover;                    
+    object-position: var(--pos, center); 
     transition:transform .8s cubic-bezier(.2,.7,.2,1)
 }
 .card:hover .zoom,.card:hover .img>svg{
@@ -221,14 +223,13 @@ input:focus,textarea:focus{
 }
 .story, .intention{
     font-style: italic;
-    color: #C53829;
-    margin-block: -15px;
+    color: var(--acc); 
 }
 .with{
     font-style: italic;
-    margin-block: -30px;
 }
 .made-with-intention{
-    font-size: 100px;
+    font-size: clamp(3rem, 9vw, 6rem);  
+    line-height: 1;
     font-weight: bolder;
 }

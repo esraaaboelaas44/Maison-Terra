@@ -11,17 +11,18 @@ const Img = {
     return `<svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice"><rect width="100" height="100" fill="#efe5d6"/>${s}</svg>`;
   },
 
-  // Inner HTML of a slot (placeholder + photo)
-  layers(path, alt = "", phInner = "", phBg = "") {
-    const src = Img.src(path);
-    return `<div class="ph" style="${phBg ? "background:" + phBg : ""}">${phInner}<small>${src}</small></div>` +
-           `<img class="zoom" src="${src}" alt="${alt}" loading="lazy" onload="this.previousElementSibling.remove()" onerror="this.remove()">`;
+
+  layers(path, alt = "", phInner = "", phBg = "", eager = false) {
+  const src = Img.src(path);
+  const load = eager ? 'loading="eager" fetchpriority="high"' : 'loading="lazy"';
+  return `<div class="ph" style="${phBg ? "background:" + phBg : ""}">${phInner}<small>${src}</small></div>` +
+         `<img class="zoom" src="${src}" alt="${alt}" ${load} decoding="async" onload="this.previousElementSibling.remove()" onerror="this.remove()">`;
   },
 
   hydrate(root = document) {
     $$("[data-img]", root).forEach(el => {
       el.classList.add("slot");
-      el.innerHTML = Img.layers(el.dataset.img, el.dataset.alt || "", "", el.dataset.ph || "");
+      el.innerHTML = Img.layers(el.dataset.img, el.dataset.alt || "", "", el.dataset.ph || "", el.dataset.eager === "true");
     });
   }
 };
